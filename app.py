@@ -14,9 +14,12 @@ countries = [
     'Paris',
     'Amsterdam'
 ]
+# print(os.environ['SOME_VAR'])
 app = Flask(__name__)
-key = sys.argv[1]
-secret = sys.argv[2]
+# key = sys.argv[1]
+# secret = sys.argv[2]
+key = os.environ['ACCESS_KEY']
+secret = os.environ['SECRET_ACCESS_KEY']
 @app.route("/")
 def index():
     data = get_reviews()
